@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  max-width: 400px;
+  margin: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
