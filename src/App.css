@@ -3,5 +3,12 @@
 body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #f4f4f9;
+  color: #2b2d42;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

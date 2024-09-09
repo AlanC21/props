@@ -2,19 +2,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  justify-content: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
   margin-bottom: 10px;
-  padding: 5px;
 }
 
-.button {
-  padding: 5px 10px;
+.submitButton {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.resetButton {
+  margin-top: 8px;
+  padding: 10px 20px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .message {
   margin-top: 10px;
-  font-weight: bold;
+  font-size: 18px;
 }

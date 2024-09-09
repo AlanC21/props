@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styles from './ImageGallery.module.css';
 
 const ImageGallery = ({ images }) => {
+  // Mantiene el índice actual de la imagen
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Cambia la imagen usando las teclas de flecha
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'ArrowRight') {
@@ -19,7 +21,11 @@ const ImageGallery = ({ images }) => {
 
   return (
     <div className={styles.gallery}>
-      <img src={images[currentIndex]} alt={`Imagen ${currentIndex + 1}`} className={styles.image} />
+      <img
+        src={images[currentIndex]}
+        alt={`Imagen ${currentIndex + 1}`}
+        className={styles.image}
+      />
     </div>
   );
 };

@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './NoteApp.module.css';
 
 const NoteApp = () => {
   const [note, setNote] = useState('');
-  const [timeoutId, setTimeoutId] = useState(null);
-
-  useEffect(() => {
-    return () => clearTimeout(timeoutId);
-  }, [timeoutId]);
+  const [savedNote, setSavedNote] = useState('');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
     setNote(e.target.value);
-    if (timeoutId) clearTimeout(timeoutId);
+  };
 
-    const newTimeoutId = setTimeout(() => {
-      alert('Nota guardada automáticamente');
-    }, 2000);
+  const handleSave = () => {
+    setSavedNote(note); // Guarda la nota actual
+    setStatusMessage('Guardado'); // Muestra el mensaje de guardado
 
-    setTimeoutId(newTimeoutId);
+    // Limpia el mensaje de estado después de 5 segundos
+    setTimeout(() => {
+      setStatusMessage('');
+    }, 5000); // 5 segundos
   };
 
   return (
@@ -28,6 +28,13 @@ const NoteApp = () => {
         placeholder="Escribe tus notas aquí..."
         className={styles.textarea}
       />
+      <div className={styles.container}>
+        <div className={styles.text}>
+          <label>{statusMessage}</label>
+          {savedNote && <p>Nota guardada: {savedNote}</p>}
+        </div>
+        <button onClick={handleSave} className={styles.saveButton}>Guardar</button>
+      </div>
     </div>
   );
 };
